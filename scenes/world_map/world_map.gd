@@ -1,26 +1,23 @@
 # scenes/world_map/world_map.gd
 # Peta dunia — gerakkan karakter ke lokasi untuk masuk
-extends Node2D
+extends Control
 
 signal buka_warung()
 signal buka_lokasi(id_lokasi: String)
 signal buka_koleksi()
 signal buka_upgrade()
 
-@onready var label_info: Label = $UILayer/UI/PanelInfo/VBox/LabelInfo
-@onready var label_slot: Label = $UILayer/UI/PanelInfo/VBox/LabelSlot
-@onready var label_event: Label = $UILayer/UI/PanelInfo/VBox/LabelEvent
-@onready var panel_inventori: VBoxContainer = $UILayer/UI/PanelBawah/InvScroll/InvContainer
+@onready var btn_buka_warung: Button = $VBox/BottomBar/HBox/BtnBukaWarung
+@onready var btn_koleksi: Button = $VBox/BottomBar/HBox/BtnKoleksi
+@onready var btn_upgrade: Button = $VBox/BottomBar/HBox/BtnUpgrade
+@onready var btn_save: Button = $VBox/BottomBar/HBox/BtnSave
+@onready var label_tas: Label = $VBox/BottomBar/HBox/LabelTas
 
-@onready var btn_buka_warung: Button = $UILayer/UI/PanelBawah/HBoxKiri/VBoxBtn/HBoxAtas/BtnBukaWarung
-@onready var btn_koleksi: Button = $UILayer/UI/PanelBawah/HBoxKiri/VBoxBtn/HBoxAtas/BtnKoleksi
-@onready var btn_upgrade: Button = $UILayer/UI/PanelBawah/HBoxKiri/VBoxBtn/HBoxBawah/BtnUpgrade
-@onready var btn_save: Button = $UILayer/UI/PanelBawah/HBoxKiri/VBoxBtn/HBoxBawah/BtnSave
-
-@onready var lokasi_container: Node2D = $Locations
-@onready var player: CharacterBody2D = $PlayerMap
-@onready var panel_interaksi: PanelContainer = $UILayer/PanelInteraksi
-@onready var label_interaksi: Label = $UILayer/PanelInteraksi/LabelInteraksi
+@onready var map_area: Control = $VBox/MapArea
+@onready var lokasi_container: Node2D = $VBox/MapArea/Locations
+@onready var player: CharacterBody2D = $VBox/MapArea/PlayerMap
+@onready var panel_interaksi: PanelContainer = $PanelInteraksi
+@onready var label_interaksi: Label = $PanelInteraksi/LabelInteraksi
 
 var lokasi_aktif: String = ""
 var scene_location_point: PackedScene = preload("res://scenes/world_map/location_point.tscn")
@@ -34,37 +31,44 @@ func _ready() -> void:
 	btn_buka_warung.pressed.connect(func(): buka_warung.emit())
 	btn_koleksi.pressed.connect(func(): buka_koleksi.emit())
 	btn_upgrade.pressed.connect(func(): buka_upgrade.emit())
-	btn_save.pressed.connect(func(): 
-		SaveManager.simpan_game()
-		label_info.text = "✅ Game berhasil disimpan!"
-	)
+	btn_save.pressed.connect(func(): SaveManager.simpan_game())
 	
 	# Hubungkan signal
-	GameData.slot_waktu_berubah.connect(_on_slot_berubah)
 	GameData.inventori_berubah.connect(_update_inventori)
-	GameData.uang_berubah.connect(func(_v): _update_info())
 	
 	_spawn_lokasi()
-	_update_info()
 	_update_inventori()
 
 
 func _process(_delta: float) -> void:
+	# Batasi pergerakan pemain di dalam MapArea
+	if is_instance_valid(player) and is_instance_valid(map_area):
+		var size = map_area.size
+		player.position.x = clamp(player.position.x, 12, size.x - 12)
+		player.position.y = clamp(player.position.y, 12, size.y - 12)
+		
 	# Tekan Space atau Enter untuk masuk ke lokasi
 	if lokasi_aktif != "" and Input.is_action_just_pressed("ui_accept"):
 		_kunjungi_lokasi(lokasi_aktif)
 
 
 func _spawn_lokasi() -> void:
-	# Posisi manual untuk tiap lokasi (bisa disesuaikan nanti)
-	var posisi_lokasi = {
-		"pasar": Vector2(180, 160),
-		"sawah": Vector2(480, 120),
-		"hutan": Vector2(350, 240),
-		"pelabuhan": Vector2(100, 260),
-		"pasar_malam": Vector2(500, 260),
-		"pasar_loak": Vector2(250, 80)
+	# Tunggu frame pertama agar MapArea punya ukuran yang valid
+	await get_tree().process_frame
+	var size = map_area.size
+	if size.x == 0: size = Vector2(640, 296) # Fallback
+	
+	# Posisi berdasarkan persentase agar responsif
+	var pos_persen = {
+		"pasar": Vector2(0.25, 0.45),
+		"sawah": Vector2(0.8, 0.25),
+		"hutan": Vector2(0.75, 0.75),
+		"pelabuhan": Vector2(0.2, 0.8),
+		"pasar_malam": Vector2(0.5, 0.8),
+		"pasar_loak": Vector2(0.5, 0.25)
 	}
+	
+	var margin: float = 30.0
 	
 	for id_lokasi in GameData.data_locations:
 		var data: Dictionary = GameData.data_locations[id_lokasi]
@@ -72,11 +76,15 @@ func _spawn_lokasi() -> void:
 		var nama: String = str(data.get("nama", id_lokasi))
 		var warna_str: String = str(data.get("warna", "#888888"))
 		var warna: Color = Color.from_string(warna_str, Color.GRAY)
-		var pos = posisi_lokasi.get(id_lokasi, Vector2(randf_range(100, 500), randf_range(100, 300)))
+		var persen = pos_persen.get(id_lokasi, Vector2(0.5, 0.5))
+		
+		# Kalkulasi posisi, pastikan tidak melewati batas margin
+		var x = clamp(size.x * persen.x, margin, size.x - margin)
+		var y = clamp(size.y * persen.y, margin, size.y - margin)
 		
 		var loc = scene_location_point.instantiate()
 		lokasi_container.add_child(loc)
-		loc.setup(id_lokasi, nama, warna, not terbuka, pos)
+		loc.setup(id_lokasi, nama, warna, not terbuka, Vector2(x, y), size)
 		loc.player_masuk.connect(_on_player_masuk_lokasi)
 		loc.player_keluar.connect(_on_player_keluar_lokasi)
 
@@ -107,48 +115,15 @@ func _kunjungi_lokasi(id_lokasi: String) -> void:
 	if GameData.pakai_slot_waktu():
 		buka_lokasi.emit(id_lokasi)
 	else:
-		label_info.text = "⏰ Waktu habis! Saatnya buka warung."
-
-
-func _update_info() -> void:
-	label_info.text = "Hari %d | 💰 Rp %d" % [GameData.hari, GameData.uang]
-	label_slot.text = "⏰ Waktu: %s (%d/4)" % [GameData.nama_slot_waktu(), GameData.slot_waktu_sisa]
-	
-	var nama_cuaca: String = "☀️ Cerah"
-	if GameData.cuaca == "hujan": nama_cuaca = "🌧️ Hujan"
-	elif GameData.cuaca == "berangin": nama_cuaca = "💨 Berangin"
-	
-	var teks_event: String = "Cuaca: " + nama_cuaca
-	if not EventManager.event_hari_ini.is_empty():
-		teks_event += " | 📢 " + str(EventManager.event_hari_ini.get("nama", ""))
-	label_event.text = teks_event
-
-
-func _on_slot_berubah(_sisa: int) -> void:
-	_update_info()
+		# Beri efek getar/merah jika tidak bisa masuk karena waktu habis
+		var tween = create_tween()
+		tween.tween_property(panel_interaksi, "modulate", Color.RED, 0.1)
+		tween.tween_property(panel_interaksi, "modulate", Color.WHITE, 0.1)
+		label_interaksi.text = "⏰ Waktu habis! Saatnya buka warung."
 
 
 func _update_inventori() -> void:
-	# Hapus list lama
-	for child in panel_inventori.get_children():
-		child.queue_free()
-	
-	var label_header := Label.new()
-	label_header.text = "🎒 Tas (%d/%d)" % [GameData.hitung_total_item(), GameData.slot_tas_maks]
-	label_header.add_theme_color_override("font_color", Color(1, 0.8, 0.3))
-	panel_inventori.add_child(label_header)
-	
-	for id_item in GameData.inventori:
-		var info: Dictionary = GameData.inventori[id_item]
-		var nama: String = id_item
-		if id_item in GameData.data_ingredients:
-			nama = str(GameData.data_ingredients[id_item].get("nama", id_item))
-		elif id_item in GameData.data_hidden_gems:
-			nama = str(GameData.data_hidden_gems[id_item].get("nama", id_item))
-		
-		var lbl := Label.new()
-		lbl.text = "  %s x%d" % [nama, int(info["jumlah"])]
-		panel_inventori.add_child(lbl)
+	label_tas.text = "🎒 Tas (%d/%d)" % [GameData.hitung_total_item(), GameData.slot_tas_maks]
 
 
 func _buat_stylebox(warna: Color) -> StyleBoxFlat:

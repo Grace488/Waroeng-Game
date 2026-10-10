@@ -18,7 +18,7 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 
 
-func setup(id: String, nama: String, warna: Color, is_terkunci: bool, pos: Vector2) -> void:
+func setup(id: String, nama: String, warna: Color, is_terkunci: bool, pos: Vector2, parent_size: Vector2) -> void:
 	id_lokasi = id
 	nama_lokasi = nama
 	terkunci = is_terkunci
@@ -33,6 +33,18 @@ func setup(id: String, nama: String, warna: Color, is_terkunci: bool, pos: Vecto
 		color_rect.color = Color(0.3, 0.3, 0.3)
 	else:
 		label_nama.text = "📍 " + nama
+	
+	# Sesuaikan posisi label agar tidak terpotong tepi layar
+	# Lebar label sekitar 140px (offset -70 hingga 70)
+	var left_edge = pos.x - 70.0
+	var right_edge = pos.x + 70.0
+	
+	if left_edge < 10:
+		label_nama.position.x = -24.0 # Rata kiri
+		label_nama.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	elif right_edge > parent_size.x - 10:
+		label_nama.position.x = -140.0 + 24.0 # Rata kanan
+		label_nama.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 
 
 func _on_body_entered(body: Node2D) -> void:
