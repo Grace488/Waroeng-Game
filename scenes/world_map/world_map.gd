@@ -18,12 +18,24 @@ signal buka_upgrade()
 @onready var player: CharacterBody2D = $VBox/MapArea/PlayerMap
 @onready var panel_interaksi: PanelContainer = $PanelInteraksi
 @onready var label_interaksi: Label = $PanelInteraksi/LabelInteraksi
+@onready var warung_building: Area2D = $VBox/MapArea/WarungBuilding
 
 var lokasi_aktif: String = ""
 var scene_location_point: PackedScene = preload("res://scenes/world_map/location_point.tscn")
 
 
 func _ready() -> void:
+	# Cek apakah sprite warung ada
+	if not ResourceLoader.exists("res://assets/sprites/warung_building.png"):
+		print("WARNING: Sprite bangunan warung tidak ditemukan! Menggunakan fallback.")
+		var sprite = warung_building.get_node("Sprite2D")
+		if sprite: sprite.hide()
+		var fallback_rect = ColorRect.new()
+		fallback_rect.size = Vector2(96, 96)
+		fallback_rect.position = Vector2(-48, -48)
+		fallback_rect.color = Color.BROWN
+		warung_building.add_child(fallback_rect)
+		
 	# Sembunyikan panel interaksi di awal
 	panel_interaksi.hide()
 	
@@ -33,11 +45,27 @@ func _ready() -> void:
 	btn_upgrade.pressed.connect(func(): buka_upgrade.emit())
 	btn_save.pressed.connect(func(): SaveManager.simpan_game())
 	
+	# Setup klik map area untuk player movement
+	map_area.gui_input.connect(_on_map_area_gui_input)
+	
+	# Setup klik warung building
+	warung_building.input_event.connect(_on_warung_input_event)
+	
 	# Hubungkan signal
 	GameData.inventori_berubah.connect(_update_inventori)
 	
 	_spawn_lokasi()
 	_update_inventori()
+
+
+func _on_map_area_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		player.pindah_ke(event.position)
+
+
+func _on_warung_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		buka_warung.emit()
 
 
 func _process(_delta: float) -> void:
@@ -59,12 +87,13 @@ func _spawn_lokasi() -> void:
 	if size.x == 0: size = Vector2(640, 296) # Fallback
 	
 	# Posisi berdasarkan persentase agar responsif
+	# Atur posisi agar tidak bertabrakan dengan WarungBuilding di (80, 220)
 	var pos_persen = {
-		"pasar": Vector2(0.25, 0.45),
+		"pasar": Vector2(0.25, 0.35),
 		"sawah": Vector2(0.8, 0.25),
 		"hutan": Vector2(0.75, 0.75),
-		"pelabuhan": Vector2(0.2, 0.8),
-		"pasar_malam": Vector2(0.5, 0.8),
+		"pelabuhan": Vector2(0.35, 0.8),
+		"pasar_malam": Vector2(0.55, 0.8),
 		"pasar_loak": Vector2(0.5, 0.25)
 	}
 	

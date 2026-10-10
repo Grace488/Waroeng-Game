@@ -55,6 +55,26 @@ func _ready() -> void:
 	GameData.inventori_berubah.connect(_update_inventori)
 	GameData.inventori_berubah.connect(_update_menu)
 	
+	# Cek sprite background warung
+	if ResourceLoader.exists("res://assets/sprites/warung_interior.png"):
+		var tex = load("res://assets/sprites/warung_interior.png")
+		var trect = TextureRect.new()
+		trect.texture = tex
+		trect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		trect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		trect.set_anchors_preset(Control.PRESET_FULL_RECT)
+		trect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		
+		# Sembunyikan warna solid lama
+		var bg_warung = $VBox/AreaWarung/BGWarung
+		if bg_warung:
+			bg_warung.hide()
+			
+		$VBox/AreaWarung.add_child(trect)
+		$VBox/AreaWarung.move_child(trect, 0)
+	else:
+		print("WARNING: Sprite interior warung tidak ditemukan! Menggunakan latar warna solid.")
+
 	# Progress masak awalnya tersembunyi
 	progress_masak.visible = false
 	

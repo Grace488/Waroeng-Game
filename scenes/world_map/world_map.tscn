@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scenes/world_map/world_map.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/world_map/player_map.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/warung_building.png" id="3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_warung"]
+size = Vector2(96, 96)
 
 [node name="WorldMap" type="Control"]
 layout_mode = 3
@@ -34,6 +38,7 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 clip_contents = true
+mouse_filter = 0
 
 [node name="MapBG" type="ColorRect" parent="VBox/MapArea"]
 layout_mode = 1
@@ -43,6 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18, 0.35, 0.22, 1)
+mouse_filter = 2
 
 [node name="Jalan1" type="ColorRect" parent="VBox/MapArea"]
 layout_mode = 1
@@ -55,6 +61,7 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4, 0.3, 0.2, 1)
+mouse_filter = 2
 
 [node name="Jalan2" type="ColorRect" parent="VBox/MapArea"]
 layout_mode = 1
@@ -67,11 +74,30 @@ offset_right = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4, 0.3, 0.2, 1)
+mouse_filter = 2
+
+[node name="WarungBuilding" type="Area2D" parent="VBox/MapArea"]
+position = Vector2(80, 220)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBox/MapArea/WarungBuilding"]
+texture_filter = 1
+texture = ExtResource("3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBox/MapArea/WarungBuilding"]
+shape = SubResource("RectangleShape2D_warung")
+
+[node name="Label" type="Label" parent="VBox/MapArea/WarungBuilding"]
+offset_left = -40.0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 63.0
+text = "🏠 Warung"
+horizontal_alignment = 1
 
 [node name="Locations" type="Node2D" parent="VBox/MapArea"]
 
 [node name="PlayerMap" parent="VBox/MapArea" instance=ExtResource("2")]
-position = Vector2(320, 150)
+position = Vector2(160, 220)
 
 [node name="BottomBar" type="PanelContainer" parent="VBox"]
 custom_minimum_size = Vector2(0, 32)
