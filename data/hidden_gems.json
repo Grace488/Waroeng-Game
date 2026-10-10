@@ -1,0 +1,90 @@
+{
+  "beras_langit": {
+    "nama": "Beras Langit",
+    "deskripsi": "Beras berwarna biru muda, katanya jatuh dari awan.",
+    "cerita": "Petani Sawah pernah melihat bintang jatuh di sawahnya. Keesokan harinya, muncul tanaman padi berwarna biru. Beras ini hanya bisa dipanen saat langit cerah setelah hujan.",
+    "lokasi": "sawah",
+    "syarat_waktu": "pagi",
+    "syarat_cuaca": "cerah",
+    "peluang": 0.15,
+    "harga_jual_kolektor": 15000,
+    "harga_beli": 8000
+  },
+  "telur_naga": {
+    "nama": "Telur Naga",
+    "deskripsi": "Telur besar berwarna merah, hangat saat dipegang.",
+    "cerita": "Ditemukan di gua tersembunyi di gunung. Penduduk lokal bilang ini telur kadal raksasa, tapi kamu yakin ini sesuatu yang lebih... epik.",
+    "lokasi": "hutan",
+    "syarat_waktu": "siang",
+    "syarat_cuaca": null,
+    "peluang": 0.10,
+    "harga_jual_kolektor": 20000,
+    "harga_beli": 12000
+  },
+  "biji_kopi_hantu": {
+    "nama": "Biji Kopi Hantu",
+    "deskripsi": "Biji kopi hitam legam yang bercahaya di gelap.",
+    "cerita": "Tumbuh di pohon kopi tua di tengah hutan yang konon angker. Pemetiknya harus berani datang saat gelap. Rasanya? Luar biasa kuat!",
+    "lokasi": "hutan",
+    "syarat_waktu": "sore",
+    "syarat_cuaca": null,
+    "peluang": 0.12,
+    "harga_jual_kolektor": 18000,
+    "harga_beli": 10000
+  },
+  "gula_semut_merah": {
+    "nama": "Gula Semut Merah",
+    "deskripsi": "Gula merah langka yang dijaga koloni semut merah.",
+    "cerita": "Di pasar, ada penjual tua yang kadang punya gula ini. Katanya dia dapat dari pohon aren yang dijaga semut merah raksasa. Semutnya jinak kalau diberi buah.",
+    "lokasi": "pasar",
+    "syarat_waktu": "pagi",
+    "syarat_cuaca": null,
+    "peluang": 0.15,
+    "harga_jual_kolektor": 12000,
+    "harga_beli": 7000
+  },
+  "kunyit_emas": {
+    "nama": "Kunyit Emas",
+    "deskripsi": "Kunyit berkilau seperti emas, wanginya luar biasa.",
+    "cerita": "Konon kunyit ini tumbuh di tempat harta karun terkubur. Seorang petani menemukannya saat mencangkul, dan bumbu dari kunyit ini mengubah semua masakan jadi istimewa.",
+    "lokasi": "sawah",
+    "syarat_waktu": "siang",
+    "syarat_cuaca": "cerah",
+    "peluang": 0.10,
+    "harga_jual_kolektor": 22000,
+    "harga_beli": 15000
+  },
+  "durian_pelangi": {
+    "nama": "Durian Pelangi",
+    "deskripsi": "Durian kecil dengan daging buah warna-warni.",
+    "cerita": "Pohon durian ini cuma berbuah saat hujan dan matahari muncul bersamaan. Dagingnya ada 5 warna: merah, kuning, hijau, biru, ungu. Rasanya? Setiap warna beda!",
+    "lokasi": "hutan",
+    "syarat_waktu": null,
+    "syarat_cuaca": "hujan",
+    "peluang": 0.08,
+    "harga_jual_kolektor": 25000,
+    "harga_beli": 18000
+  },
+  "gandum_abadi": {
+    "nama": "Gandum Abadi",
+    "deskripsi": "Gandum yang tidak pernah layu atau basi.",
+    "cerita": "Dari ladang gandum dekat mata air panas. Uap panas membuat gandum ini tahan selamanya. Roti dari gandum ini masih empuk setelah sebulan!",
+    "lokasi": "hutan",
+    "syarat_waktu": "pagi",
+    "syarat_cuaca": "berangin",
+    "peluang": 0.08,
+    "harga_jual_kolektor": 20000,
+    "harga_beli": 14000
+  },
+  "jamur_bercahaya": {
+    "nama": "Jamur Bercahaya",
+    "deskripsi": "Jamur yang menyala hijau di kegelapan.",
+    "cerita": "Hanya muncul di malam tanpa bulan, di batang pohon tua. Jamur ini aman dimakan dan memberi rasa umami yang tidak ada duanya. Tapi hati-hati, bentuknya mirip jamur beracun!",
+    "lokasi": "hutan",
+    "syarat_waktu": "sore",
+    "syarat_cuaca": "hujan",
+    "peluang": 0.05,
+    "harga_jual_kolektor": 30000,
+    "harga_beli": 20000
+  }
+}

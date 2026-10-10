@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/world_map/world_map.gd" id="1"]
+
+[node name="WorldMap" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.06, 0.21, 0.37, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelInfo" type="PanelContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="LabelInfo" type="Label" parent="VBox/PanelInfo"]
+layout_mode = 2
+text = "Hari 1 | Cuaca: Cerah"
+
+[node name="LabelSlot" type="Label" parent="VBox/PanelInfo"]
+layout_mode = 2
+text = "⏰ Slot waktu: 4/4"
+
+[node name="LabelEvent" type="Label" parent="VBox/PanelInfo"]
+layout_mode = 2
+text = ""
+
+[node name="ScrollLokasi" type="ScrollContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LokasiContainer" type="VBoxContainer" parent="VBox/ScrollLokasi"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelBawah" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="HBox" type="VBoxContainer" parent="VBox/PanelBawah"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BtnBukaWarung" type="Button" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+text = "🏪 Buka Warung (Malam)"
+
+[node name="BtnKoleksi" type="Button" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+text = "📖 Buku Koleksi"
+
+[node name="BtnUpgrade" type="Button" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+text = "🔧 Upgrade Warung"
+
+[node name="BtnSave" type="Button" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+text = "💾 Simpan Game"
+
+[node name="InvScroll" type="ScrollContainer" parent="VBox/PanelBawah"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InvContainer" type="VBoxContainer" parent="VBox/PanelBawah/InvScroll"]
+layout_mode = 2
+size_flags_horizontal = 3

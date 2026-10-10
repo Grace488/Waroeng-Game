@@ -1,0 +1,56 @@
+{
+  "pasar": {
+    "nama": "Pasar Tradisional",
+    "deskripsi": "Pasar ramai penuh warna dan aroma rempah.",
+    "warna": "#e07b39",
+    "buka_awal": true,
+    "syarat_buka": null,
+    "bahan_tersedia": ["beras", "telur", "minyak", "bumbu", "sayur", "gula", "kopi_bubuk", "teh", "mie_instan", "terigu"],
+    "bisa_tawar": true
+  },
+  "sawah": {
+    "nama": "Sawah & Desa",
+    "deskripsi": "Desa tenang dengan sawah hijau membentang.",
+    "warna": "#4caf50",
+    "buka_awal": true,
+    "syarat_buka": null,
+    "bahan_tersedia": ["beras", "telur", "bumbu", "sayur", "ayam_kampung", "kelapa"],
+    "bisa_tawar": false
+  },
+  "hutan": {
+    "nama": "Hutan & Gunung",
+    "deskripsi": "Hutan lebat di kaki gunung, penuh misteri.",
+    "warna": "#2e7d32",
+    "buka_awal": true,
+    "syarat_buka": null,
+    "bahan_tersedia": ["kopi_bubuk", "jamur", "madu", "rempah"],
+    "bisa_tawar": false
+  },
+  "pelabuhan": {
+    "nama": "Pelabuhan",
+    "deskripsi": "Pelabuhan nelayan, bau amis tapi segar.",
+    "warna": "#1976d2",
+    "buka_awal": false,
+    "syarat_buka": "Layani Pak Nelayan (pelanggan spesial) di hari ke-5+",
+    "bahan_tersedia": ["ikan_segar", "udang", "rumput_laut"],
+    "bisa_tawar": true
+  },
+  "pasar_malam": {
+    "nama": "Pasar Malam",
+    "deskripsi": "Pasar malam gemerlap, penuh jajanan unik.",
+    "warna": "#9c27b0",
+    "buka_awal": false,
+    "syarat_buka": "Kumpulkan 3 hidden gem",
+    "bahan_tersedia": ["sosis", "keju", "susu", "coklat"],
+    "bisa_tawar": false
+  },
+  "pasar_loak": {
+    "nama": "Pasar Loak",
+    "deskripsi": "Tumpukan barang antik, siapa tahu ada harta.",
+    "warna": "#795548",
+    "buka_awal": false,
+    "syarat_buka": "Capai hari ke-10",
+    "bahan_tersedia": [],
+    "bisa_tawar": true
+  }
+}

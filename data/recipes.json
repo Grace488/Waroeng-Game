@@ -1,0 +1,42 @@
+{
+  "nasi_goreng_langit": {
+    "nama": "Nasi Goreng Langit",
+    "harga_jual": 25000,
+    "waktu_masak": 6.0,
+    "bahan": {"beras_langit": 1, "telur_naga": 1, "bumbu": 2},
+    "deskripsi": "Nasi goreng legendaris, konon bisa bikin melayang.",
+    "cerita": "Resep ini ditemukan di puncak gunung oleh petapa lapar."
+  },
+  "kopi_roh": {
+    "nama": "Kopi Roh Halus",
+    "harga_jual": 20000,
+    "waktu_masak": 5.0,
+    "bahan": {"biji_kopi_hantu": 1, "gula_semut_merah": 1},
+    "deskripsi": "Kopi misterius, aroma supernatural.",
+    "cerita": "Katanya kalau diminum tengah malam bisa lihat 'mereka'."
+  },
+  "soto_emas": {
+    "nama": "Soto Emas",
+    "harga_jual": 30000,
+    "waktu_masak": 8.0,
+    "bahan": {"ayam_kampung": 1, "kunyit_emas": 1, "rempah": 1, "beras": 1},
+    "deskripsi": "Soto kuning keemasan, bikin hati hangat.",
+    "cerita": "Resep warisan nenek moyang, disimpan di daun lontar."
+  },
+  "es_durian_pelangi": {
+    "nama": "Es Durian Pelangi",
+    "harga_jual": 18000,
+    "waktu_masak": 4.0,
+    "bahan": {"durian_pelangi": 1, "susu": 1, "gula": 1},
+    "deskripsi": "Es durian warna-warni, rasa surga.",
+    "cerita": "Durian ini cuma tumbuh saat pelangi ganda muncul."
+  },
+  "mie_abadi": {
+    "nama": "Mie Abadi",
+    "harga_jual": 22000,
+    "waktu_masak": 7.0,
+    "bahan": {"gandum_abadi": 1, "telur": 1, "bumbu": 1, "jamur_bercahaya": 1},
+    "deskripsi": "Mie yang katanya tidak pernah dingin.",
+    "cerita": "Dibuat dari gandum yang tumbuh di dekat mata air panas."
+  }
+}

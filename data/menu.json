@@ -1,0 +1,50 @@
+{
+  "kopi": {
+    "nama": "Kopi Tubruk",
+    "harga_jual": 3000,
+    "waktu_masak": 2.0,
+    "bahan": {"kopi_bubuk": 1, "gula": 1},
+    "deskripsi": "Kopi hitam pekat khas warung pinggir jalan.",
+    "spesial": false
+  },
+  "mie_instan": {
+    "nama": "Mie Instan Spesial",
+    "harga_jual": 5000,
+    "waktu_masak": 4.0,
+    "bahan": {"mie_instan": 1, "telur": 1, "bumbu": 1},
+    "deskripsi": "Mie instan dengan telur ceplok, favorit mahasiswa.",
+    "spesial": false
+  },
+  "gorengan": {
+    "nama": "Gorengan Campur",
+    "harga_jual": 2000,
+    "waktu_masak": 3.0,
+    "bahan": {"terigu": 1, "minyak": 1},
+    "deskripsi": "Tahu, tempe, bakwan goreng garing.",
+    "spesial": false
+  },
+  "nasi_goreng": {
+    "nama": "Nasi Goreng",
+    "harga_jual": 8000,
+    "waktu_masak": 5.0,
+    "bahan": {"beras": 1, "telur": 1, "bumbu": 1, "minyak": 1},
+    "deskripsi": "Nasi goreng pedas dengan telur mata sapi.",
+    "spesial": false
+  },
+  "es_teh": {
+    "nama": "Es Teh Manis",
+    "harga_jual": 2000,
+    "waktu_masak": 1.5,
+    "bahan": {"teh": 1, "gula": 1},
+    "deskripsi": "Teh manis dingin, penawar dahaga nomor satu.",
+    "spesial": false
+  },
+  "soto_ayam": {
+    "nama": "Soto Ayam",
+    "harga_jual": 10000,
+    "waktu_masak": 6.0,
+    "bahan": {"ayam_kampung": 1, "beras": 1, "bumbu": 1, "sayur": 1},
+    "deskripsi": "Soto ayam kuning hangat dengan nasi.",
+    "spesial": false
+  }
+}

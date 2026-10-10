@@ -1,0 +1,178 @@
+{
+  "beras": {
+    "nama": "Beras",
+    "harga_dasar": 2000,
+    "lokasi": ["pasar", "sawah"],
+    "deskripsi": "Beras pulen pilihan petani lokal.",
+    "basi_hari": 7,
+    "langka": false
+  },
+  "telur": {
+    "nama": "Telur Ayam",
+    "harga_dasar": 1500,
+    "lokasi": ["pasar", "sawah"],
+    "deskripsi": "Telur segar, masih hangat dari sarang.",
+    "basi_hari": 5,
+    "langka": false
+  },
+  "minyak": {
+    "nama": "Minyak Goreng",
+    "harga_dasar": 3000,
+    "lokasi": ["pasar"],
+    "deskripsi": "Minyak goreng curah, andalan ibu-ibu.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "bumbu": {
+    "nama": "Bumbu Dasar",
+    "harga_dasar": 1000,
+    "lokasi": ["pasar", "sawah"],
+    "deskripsi": "Bawang merah, putih, cabai—tritunggal masakan.",
+    "basi_hari": 4,
+    "langka": false
+  },
+  "sayur": {
+    "nama": "Sayur Segar",
+    "harga_dasar": 1500,
+    "lokasi": ["pasar", "sawah"],
+    "deskripsi": "Kangkung, bayam, sawi—hijau segar dari kebun.",
+    "basi_hari": 3,
+    "langka": false
+  },
+  "gula": {
+    "nama": "Gula Pasir",
+    "harga_dasar": 2000,
+    "lokasi": ["pasar"],
+    "deskripsi": "Manis legit, bikin senyum pelanggan.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "kopi_bubuk": {
+    "nama": "Kopi Bubuk",
+    "harga_dasar": 3000,
+    "lokasi": ["pasar", "hutan"],
+    "deskripsi": "Kopi robusta lokal, aroma khas warung.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "teh": {
+    "nama": "Teh Celup",
+    "harga_dasar": 1000,
+    "lokasi": ["pasar"],
+    "deskripsi": "Teh celup murah meriah, selalu laris.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "mie_instan": {
+    "nama": "Mie Instan",
+    "harga_dasar": 2500,
+    "lokasi": ["pasar"],
+    "deskripsi": "Mi instan favorit semua kalangan.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "terigu": {
+    "nama": "Tepung Terigu",
+    "harga_dasar": 1500,
+    "lokasi": ["pasar"],
+    "deskripsi": "Tepung serbaguna, bisa jadi apa saja.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "ayam_kampung": {
+    "nama": "Ayam Kampung",
+    "harga_dasar": 8000,
+    "lokasi": ["sawah"],
+    "deskripsi": "Ayam kampung jalan kaki, dagingnya mantap.",
+    "basi_hari": 3,
+    "langka": false
+  },
+  "kelapa": {
+    "nama": "Kelapa",
+    "harga_dasar": 3000,
+    "lokasi": ["sawah"],
+    "deskripsi": "Kelapa segar, bisa jadi santan atau es kelapa.",
+    "basi_hari": 5,
+    "langka": false
+  },
+  "jamur": {
+    "nama": "Jamur Hutan",
+    "harga_dasar": 4000,
+    "lokasi": ["hutan"],
+    "deskripsi": "Jamur liar dari lereng gunung, rasa unik.",
+    "basi_hari": 3,
+    "langka": false
+  },
+  "madu": {
+    "nama": "Madu Hutan",
+    "harga_dasar": 6000,
+    "lokasi": ["hutan"],
+    "deskripsi": "Madu asli dari sarang lebah hutan.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "rempah": {
+    "nama": "Rempah Pegunungan",
+    "harga_dasar": 5000,
+    "lokasi": ["hutan"],
+    "deskripsi": "Kayu manis, cengkeh, pala—harta karun Nusantara.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "ikan_segar": {
+    "nama": "Ikan Segar",
+    "harga_dasar": 7000,
+    "lokasi": ["pelabuhan"],
+    "deskripsi": "Ikan laut segar langsung dari nelayan.",
+    "basi_hari": 2,
+    "langka": false
+  },
+  "udang": {
+    "nama": "Udang",
+    "harga_dasar": 10000,
+    "lokasi": ["pelabuhan"],
+    "deskripsi": "Udang galah besar, cocok digoreng tepung.",
+    "basi_hari": 2,
+    "langka": false
+  },
+  "rumput_laut": {
+    "nama": "Rumput Laut",
+    "harga_dasar": 3000,
+    "lokasi": ["pelabuhan"],
+    "deskripsi": "Rumput laut kering, bisa jadi es campur.",
+    "basi_hari": -1,
+    "langka": false
+  },
+  "sosis": {
+    "nama": "Sosis",
+    "harga_dasar": 4000,
+    "lokasi": ["pasar_malam"],
+    "deskripsi": "Sosis bakar, makanan wajib pasar malam.",
+    "basi_hari": 5,
+    "langka": false
+  },
+  "keju": {
+    "nama": "Keju",
+    "harga_dasar": 6000,
+    "lokasi": ["pasar_malam"],
+    "deskripsi": "Keju leleh, bikin semua jadi enak.",
+    "basi_hari": 7,
+    "langka": false
+  },
+  "susu": {
+    "nama": "Susu Segar",
+    "harga_dasar": 4000,
+    "lokasi": ["pasar_malam"],
+    "deskripsi": "Susu segar dari peternakan pinggir kota.",
+    "basi_hari": 3,
+    "langka": false
+  },
+  "coklat": {
+    "nama": "Coklat Batangan",
+    "harga_dasar": 5000,
+    "lokasi": ["pasar_malam"],
+    "deskripsi": "Coklat lokal, manis pahit sempurna.",
+    "basi_hari": -1,
+    "langka": false
+  }
+}

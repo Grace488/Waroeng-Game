@@ -1,0 +1,50 @@
+{
+  "kompor_cepat": {
+    "nama": "Kompor Turbo",
+    "deskripsi": "Masak 30% lebih cepat!",
+    "harga": 25000,
+    "efek": "cook_speed",
+    "nilai": 0.7,
+    "syarat_hari": 1
+  },
+  "kursi_ekstra": {
+    "nama": "Kursi Tambahan",
+    "deskripsi": "Tambah 1 kursi pelanggan (maks 5).",
+    "harga": 20000,
+    "efek": "extra_seat",
+    "nilai": 1,
+    "syarat_hari": 3
+  },
+  "tas_besar": {
+    "nama": "Tas Lebih Besar",
+    "deskripsi": "Tambah 5 slot tas.",
+    "harga": 15000,
+    "efek": "bag_slots",
+    "nilai": 5,
+    "syarat_hari": 1
+  },
+  "dekorasi_lampion": {
+    "nama": "Lampion Warung",
+    "deskripsi": "Pelanggan lebih sabar (+3 detik kesabaran).",
+    "harga": 18000,
+    "efek": "patience_bonus",
+    "nilai": 3.0,
+    "syarat_hari": 5
+  },
+  "kulkas_mini": {
+    "nama": "Kulkas Mini",
+    "deskripsi": "Bahan segar tahan 2 hari lebih lama.",
+    "harga": 30000,
+    "efek": "spoil_delay",
+    "nilai": 2,
+    "syarat_hari": 4
+  },
+  "papan_menu": {
+    "nama": "Papan Menu Neon",
+    "deskripsi": "Pelanggan datang 20% lebih sering.",
+    "harga": 22000,
+    "efek": "spawn_rate",
+    "nilai": 0.8,
+    "syarat_hari": 6
+  }
+}

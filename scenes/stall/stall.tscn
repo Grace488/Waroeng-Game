@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/stall/stall.gd" id="1"]
+
+[node name="Stall" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AreaWarung" type="PanelContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="BGWarung" type="ColorRect" parent="VBox/AreaWarung"]
+layout_mode = 2
+color = Color(0.12, 0.1, 0.22, 1)
+
+[node name="LabelTimer" type="Label" parent="VBox/AreaWarung"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "⏰ 1:30"
+
+[node name="KursiContainer" type="HBoxContainer" parent="VBox/AreaWarung"]
+layout_mode = 2
+size_flags_vertical = 5
+alignment = 1
+
+[node name="LabelWarung" type="Label" parent="VBox/AreaWarung"]
+layout_mode = 2
+size_flags_vertical = 8
+horizontal_alignment = 1
+text = "🏪 WARUNG PIXEL — Malam Hari"
+
+[node name="PanelBawah" type="PanelContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBox" type="HBoxContainer" parent="VBox/PanelBawah"]
+layout_mode = 2
+
+[node name="MenuScroll" type="ScrollContainer" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+
+[node name="MenuContainer" type="VBoxContainer" parent="VBox/PanelBawah/HBox/MenuScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelMenu" type="Label" parent="VBox/PanelBawah/HBox/MenuScroll/MenuContainer"]
+layout_mode = 2
+text = "📋 MENU"
+
+[node name="InvScroll" type="ScrollContainer" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InvContainer" type="VBoxContainer" parent="VBox/PanelBawah/HBox/InvScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatusPanel" type="VBoxContainer" parent="VBox/PanelBawah/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelStatus" type="Label" parent="VBox/PanelBawah/HBox/StatusPanel"]
+layout_mode = 2
+autowrap_mode = 2
+text = "Warung buka!"
+
+[node name="ProgressMasak" type="ProgressBar" parent="VBox/PanelBawah/HBox/StatusPanel"]
+layout_mode = 2
+max_value = 100.0
+value = 0.0
+
+[node name="BtnSelesai" type="Button" parent="VBox/PanelBawah/HBox/StatusPanel"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "🔒 Tutup Warung"
+
+[node name="TimerSpawn" type="Timer" parent="."]
+
+[node name="TimerWarung" type="Timer" parent="."]

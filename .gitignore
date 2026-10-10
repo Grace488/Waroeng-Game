@@ -1,0 +1,22 @@
+# Godot 4 .gitignore
+
+# Godot cache & import
+.godot/
+.import/
+
+# Export
+export/
+*.exe
+*.x86_64
+*.pck
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~

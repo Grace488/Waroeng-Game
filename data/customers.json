@@ -1,0 +1,49 @@
+{
+  "pak_nelayan": {
+    "nama": "Pak Nelayan",
+    "pesanan_rahasia": "soto_ayam",
+    "cerita": "Pak Nelayan sudah 30 tahun melaut. Dia kangen masakan ibunya—soto ayam kuning. Kalau kamu bisa buatkan, dia akan tunjukkan jalan ke pelabuhan rahasia.",
+    "hadiah": {"uang": 15000, "buka_lokasi": "pelabuhan"},
+    "muncul_hari_min": 5,
+    "kesabaran": 30.0,
+    "warna": "#1565c0"
+  },
+  "mbak_penjahit": {
+    "nama": "Mbak Penjahit",
+    "pesanan_rahasia": "kopi",
+    "cerita": "Mbak Penjahit begadang jahit baju pengantin. Dia butuh kopi kuat biar mata tetap terbuka. Kalau kopimu enak, dia kasih kain batik langka.",
+    "hadiah": {"uang": 10000, "item": "kain_batik_langka"},
+    "muncul_hari_min": 3,
+    "kesabaran": 20.0,
+    "warna": "#ad1457"
+  },
+  "kakek_misterius": {
+    "nama": "Kakek Misterius",
+    "pesanan_rahasia": "nasi_goreng",
+    "cerita": "Kakek ini selalu muncul saat hujan. Tidak ada yang tahu namanya. Dia mau nasi goreng, tapi matanya menatap jauh ke langit...",
+    "hadiah": {"uang": 20000, "item": "peta_kuno"},
+    "muncul_hari_min": 7,
+    "kesabaran": 25.0,
+    "warna": "#4a148c",
+    "syarat_cuaca": "hujan"
+  },
+  "anak_hilang": {
+    "nama": "Anak Kecil",
+    "pesanan_rahasia": "es_teh",
+    "cerita": "Anak kecil tersesat dari rombongan. Dia haus dan kelelahan. Es teh manis bisa bikin dia tersenyum lagi. Ternyata dia anak pemilik Pasar Malam!",
+    "hadiah": {"uang": 5000, "buka_lokasi": "pasar_malam"},
+    "muncul_hari_min": 8,
+    "kesabaran": 15.0,
+    "warna": "#f57f17"
+  },
+  "kolektor": {
+    "nama": "Kolektor Antik",
+    "pesanan_rahasia": null,
+    "cerita": "Kolektor antik yang berkeliling mencari bahan langka. Dia tidak makan di warung, tapi mau beli hidden gem dengan harga tinggi.",
+    "hadiah": {"uang": 50000},
+    "muncul_hari_min": 10,
+    "kesabaran": 35.0,
+    "warna": "#795548",
+    "beli_hidden_gem": true
+  }
+}
