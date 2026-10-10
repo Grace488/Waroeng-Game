@@ -168,7 +168,7 @@ func _cek_hidden_gem() -> void:
 
 
 # --- Mini-game tawar-menawar ---
-func _mulai_tawar(id_bahan: String, harga_dasar: int, harga_normal: int, nama: String) -> void:
+func _mulai_tawar(id_bahan: String, _harga_dasar: int, harga_normal: int, nama: String) -> void:
 	# Buat popup tawar-menawar sederhana
 	# Marker bergerak dari kiri ke kanan, tekan tombol saat di zona hijau
 	var popup := PanelContainer.new()

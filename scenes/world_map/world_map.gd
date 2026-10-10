@@ -119,8 +119,8 @@ func _update_info() -> void:
 	elif GameData.cuaca == "berangin": nama_cuaca = "💨 Berangin"
 	
 	var teks_event: String = "Cuaca: " + nama_cuaca
-	if EventManager.event_aktif != "":
-		teks_event += " | 📢 " + EventManager.nama_event
+	if not EventManager.event_hari_ini.is_empty():
+		teks_event += " | 📢 " + str(EventManager.event_hari_ini.get("nama", ""))
 	label_event.text = teks_event
 
 

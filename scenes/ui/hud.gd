@@ -49,7 +49,7 @@ func _on_cuaca_berubah(cuaca: String) -> void:
 	label_cuaca.text = emoji + " " + cuaca.capitalize()
 
 
-func _on_slot_waktu_berubah(sisa: int) -> void:
+func _on_slot_waktu_berubah(_sisa: int) -> void:
 	label_waktu.text = "⏰ " + GameData.nama_slot_waktu()
 
 

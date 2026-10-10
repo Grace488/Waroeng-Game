@@ -73,7 +73,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_warung_tick() -> void:
 	waktu_warung_sisa -= 1.0
-	var menit: int = int(waktu_warung_sisa) / 60
+	var menit: int = floori(waktu_warung_sisa / 60.0)
 	var detik: int = int(waktu_warung_sisa) % 60
 	label_timer.text = "⏰ %d:%02d" % [menit, detik]
 	
