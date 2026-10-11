@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Warung Pixel"
+config/name="Waroeng"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
@@ -37,5 +37,4 @@ window/stretch/mode="canvas_items"
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
-
 environment/defaults/default_clear_color=Color(0.1, 0.1, 0.18, 1)
